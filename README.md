@@ -1,6 +1,6 @@
 # Java Upskilling Roadmap 🛤️
 This project have the main topics about java in order to knowledge-transfer KT for study the main projects
-## ✅ Prerequisites fpr  a funniest terminal
+## ✅ Prerequisites for  a funniest terminal
 ### ☕ Java JDK
  - Download Java 24 from the official website:
    🔗[Descargar Java JDK 24](https://www.oracle.com/java/technologies/downloads/#jdk24-windows)
