@@ -1,0 +1,63 @@
+package com.geracode.javaupskillingroadmap.dojochallenge.searchsortedarray;
+
+import com.geracode.javaupskillingroadmap.dojochallenge.Utils.CodeException;
+import java.util.Objects;
+
+/**
+ * Search in Rotated Sorted Array class
+ */
+public class SearchRotatedSortedArray {
+
+    private SearchRotatedSortedArray() {
+    }
+
+    /**
+     * There is an integer array nums sorted in ascending order (with distinct values).
+     *
+     * Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length)
+     * such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed).
+     * For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+     *
+     * Given the array nums after the possible rotation and an integer target,
+     * return the index of target if it is in nums, or -1 if it is not in nums.
+     * You must write an algorithm with O(log n) runtime complexity.
+     *
+     * Example 1:
+     * Input: nums = [4,5,6,7,0,1,2], target = 0
+     * Output: 4
+     *
+     * Example 2:
+     * Input: nums = [4,5,6,7,0,1,2], target = 3
+     * Output: -1
+     *
+     * Example 3:
+     * Input: nums = [1], target = 0
+     * Output: -1
+     */
+    public static int searchRotatedSortedByArrayAndTarget(int[] nums, int target){
+        if(Objects.isNull(nums) || nums.length == 0) {
+            throw new CodeException("The array is null or empty");
+        }
+        int firstIndex = 0;
+        int lastIndex = nums.length - 1;
+        while (firstIndex <= lastIndex) {
+            int middleIndex = firstIndex + ((lastIndex - firstIndex) / 2);
+            if (nums[middleIndex] == target) {
+                return middleIndex;
+            } else if (nums[firstIndex] <= nums[middleIndex]) {
+                if (nums[middleIndex] > target && nums[firstIndex] <= target) {
+                    lastIndex--;
+                } else {
+                    firstIndex++;
+                }
+            } else if (nums[lastIndex] >= nums[middleIndex]) {
+                if (nums[middleIndex] < target && nums[lastIndex] >= target) {
+                    firstIndex = middleIndex + 1;
+                } else {
+                    lastIndex = middleIndex - 1;
+                }
+            }
+        }
+        return -1;
+    }
+}

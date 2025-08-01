@@ -9,15 +9,16 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.geracode</groupId>
-	<artifactId>java-knowledge-roadmap</artifactId>
+	<artifactId>javaupskillingroadmap</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>java-knowledge-roadmap</name>
-	<description>Demo project for Spring Boot with java-knowledge-transfer</description>
+	<name>javaupskillingroadmap</name>
+	<description>Project for Spring Boot with java knowledge transfer</description>
 	<url/>
 	<licenses>
 		<license/>
 	</licenses>
 	<developers>
+		<developer/>
 		<developer/>
 	</developers>
 	<scm>
@@ -27,7 +28,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>24</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -39,6 +40,25 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.5.0</version>
 		</dependency>
 	</dependencies>
 
